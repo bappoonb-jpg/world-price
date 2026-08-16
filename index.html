@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>World Price</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#111827;
+}
+
+header{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:28px 15px;
+}
+
+header h1{
+  margin:0;
+  font-size:32px;
+}
+
+header p{
+  margin:8px 0 0;
+  color:#d1d5db;
+}
+
+main{
+  max-width:700px;
+  margin:auto;
+  padding:20px;
+}
+
+.search-box{
+  display:flex;
+  gap:8px;
+  margin-bottom:20px;
+}
+
+input{
+  flex:1;
+  padding:15px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  font-size:16px;
+}
+
+button{
+  padding:15px 18px;
+  border:0;
+  border-radius:10px;
+  background:#2563eb;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  margin-bottom:15px;
+  border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.card h2{
+  margin:0 0 10px;
+}
+
+.price{
+  font-size:24px;
+  font-weight:bold;
+  color:#16a34a;
+}
+
+.info{
+  margin-top:10px;
+  color:#6b7280;
+  line-height:1.7;
+}
+
+.not-found{
+  text-align:center;
+  padding:30px;
+  color:#6b7280;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌍 World Price</h1>
+<p>Find and compare prices around the world</p>
+</header>
+
+<main>
+
+<div class="search-box">
+<input id="searchInput" type="text" placeholder="Search a product...">
+<button onclick="searchProducts()">Search</button>
+</div>
+
+<div id="results"></div>
+
+</main>
+
+<script>
+
+const products = [
+
+{
+name:"iPhone 15",
+price:"₹59,999",
+location:"India",
+source:"Sample Store"
+},
+
+{
+name:"Samsung Galaxy S24",
+price:"₹64,999",
+location:"India",
+source:"Sample Store"
+},
+
+{
+name:"Yamaha R15",
+price:"₹1,85,000",
+location:"India",
+source:"Sample Dealer"
+}
+
+];
+
+function showProducts(list){
+
+const results=document.getElementById("results");
+
+if(list.length===0){
+
+results.innerHTML=
+'<div class="not-found">No product found.</div>';
+
+return;
+
+}
+
+results.innerHTML=list.map(product=>`
+
+<div class="card">
+
+<h2>${product.name}</h2>
+
+<div class="price">
+${product.price}
+</div>
+
+<div class="info">
+📍 Location: ${product.location}<br>
+🏪 Source: ${product.source}<br>
+🕒 Updated: Today
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+function searchProducts(){
+
+const query=document
+.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+const filtered=products.filter(product=>
+product.name.toLowerCase().includes(query)
+);
+
+showProducts(filtered);
+
+}
+
+showProducts(products);
+
+</script>
+
+</body>
+</html>
