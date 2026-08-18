@@ -7,92 +7,127 @@
 <title>World Price</title>
 
 <style>
-*{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f7fb;
-  color:#111827;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #111827;
 }
 
-header{
-  background:#111827;
-  color:white;
-  text-align:center;
-  padding:28px 15px;
+header {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 28px 15px;
 }
 
-header h1{
-  margin:0;
-  font-size:32px;
+header h1 {
+  margin: 0;
+  font-size: 32px;
 }
 
-header p{
-  margin:8px 0 0;
-  color:#d1d5db;
+header p {
+  margin: 8px 0 0;
+  color: #d1d5db;
 }
 
-main{
-  max-width:700px;
-  margin:auto;
-  padding:20px;
+main {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
 }
 
-.search-box{
-  display:flex;
-  gap:8px;
-  margin-bottom:20px;
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-input{
-  flex:1;
-  padding:15px;
-  border:1px solid #d1d5db;
-  border-radius:10px;
-  font-size:16px;
+input {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 16px;
 }
 
-button{
-  padding:15px 18px;
-  border:0;
-  border-radius:10px;
-  background:#2563eb;
-  color:white;
-  font-size:16px;
-  font-weight:bold;
+button {
+  padding: 15px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.card{
-  background:white;
-  padding:18px;
-  margin-bottom:15px;
-  border-radius:14px;
-  box-shadow:0 3px 12px rgba(0,0,0,0.08);
+.card {
+  background: white;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
-.card h2{
-  margin:0 0 10px;
+.card:active {
+  transform: scale(0.98);
 }
 
-.price{
-  font-size:24px;
-  font-weight:bold;
-  color:#16a34a;
+.card h2 {
+  margin: 0 0 10px;
 }
 
-.info{
-  margin-top:10px;
-  color:#6b7280;
-  line-height:1.7;
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #16a34a;
 }
 
-.not-found{
-  text-align:center;
-  padding:30px;
-  color:#6b7280;
+.info {
+  margin-top: 10px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.not-found {
+  text-align: center;
+  padding: 30px;
+  color: #6b7280;
+}
+
+.details {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.details h2 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.detail-price {
+  font-size: 30px;
+  font-weight: bold;
+  color: #16a34a;
+  margin: 15px 0;
+}
+
+.detail-info {
+  line-height: 2;
+  color: #374151;
+}
+
+.back-button {
+  margin-bottom: 15px;
+  background: #111827;
 }
 </style>
 </head>
@@ -100,18 +135,31 @@ button{
 <body>
 
 <header>
-<h1>🌍 World Price</h1>
-<p>Find and compare prices around the world</p>
+  <h1>🌍 World Price</h1>
+  <p>Find and compare prices around the world</p>
 </header>
 
 <main>
 
-<div class="search-box">
-<input id="searchInput" type="text" placeholder="Search a product...">
-<button onclick="searchProducts()">Search</button>
-</div>
+  <div id="searchPage">
 
-<div id="results"></div>
+    <div class="search-box">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search a product..."
+      >
+
+      <button onclick="searchProducts()">
+        Search
+      </button>
+    </div>
+
+    <div id="results"></div>
+
+  </div>
+
+  <div id="detailsPage" style="display: none;"></div>
 
 </main>
 
@@ -119,78 +167,130 @@ button{
 
 const products = [
 
-{
-name:"iPhone 15",
-price:"₹59,999",
-location:"India",
-source:"Sample Store"
-},
+  {
+    name: "iPhone 15",
+    price: "₹59,999",
+    location: "India",
+    source: "Sample Store",
+    updated: "Today"
+  },
 
-{
-name:"Samsung Galaxy S24",
-price:"₹64,999",
-location:"India",
-source:"Sample Store"
-},
+  {
+    name: "Samsung Galaxy S24",
+    price: "₹64,999",
+    location: "India",
+    source: "Sample Store",
+    updated: "Today"
+  },
 
-{
-name:"Yamaha R15",
-price:"₹1,85,000",
-location:"India",
-source:"Sample Dealer"
-}
+  {
+    name: "Yamaha R15",
+    price: "₹1,85,000",
+    location: "India",
+    source: "Sample Dealer",
+    updated: "Today"
+  }
 
 ];
 
-function showProducts(list){
+function showProducts(list) {
 
-const results=document.getElementById("results");
+  const results = document.getElementById("results");
 
-if(list.length===0){
+  if (list.length === 0) {
 
-results.innerHTML=
-'<div class="not-found">No product found.</div>';
+    results.innerHTML =
+      '<div class="not-found">No product found.</div>';
 
-return;
+    return;
+  }
+
+  results.innerHTML = list.map((product) => {
+
+    const index = products.indexOf(product);
+
+    return `
+      <div class="card" onclick="showDetails(${index})">
+
+        <h2>${product.name}</h2>
+
+        <div class="price">
+          ${product.price}
+        </div>
+
+        <div class="info">
+          📍 Location: ${product.location}<br>
+          🏪 Source: ${product.source}<br>
+          🕒 Updated: ${product.updated}
+        </div>
+
+      </div>
+    `;
+
+  }).join("");
 
 }
 
-results.innerHTML=list.map(product=>`
+function searchProducts() {
 
-<div class="card">
+  const query = document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase()
+    .trim();
 
-<h2>${product.name}</h2>
+  const filtered = products.filter((product) =>
+    product.name.toLowerCase().includes(query)
+  );
 
-<div class="price">
-${product.price}
-</div>
-
-<div class="info">
-📍 Location: ${product.location}<br>
-🏪 Source: ${product.source}<br>
-🕒 Updated: Today
-</div>
-
-</div>
-
-`).join("");
-
+  showProducts(filtered);
 }
 
-function searchProducts(){
+function showDetails(index) {
 
-const query=document
-.getElementById("searchInput")
-.value
-.toLowerCase()
-.trim();
+  const product = products[index];
 
-const filtered=products.filter(product=>
-product.name.toLowerCase().includes(query)
-);
+  document.getElementById("searchPage").style.display = "none";
 
-showProducts(filtered);
+  document.getElementById("detailsPage").style.display = "block";
 
+  document.getElementById("detailsPage").innerHTML = `
+
+    <button class="back-button" onclick="goBack()">
+      ⬅️ Back
+    </button>
+
+    <div class="details">
+
+      <h2>${product.name}</h2>
+
+      <div class="detail-price">
+        ${product.price}
+      </div>
+
+      <div class="detail-info">
+
+        📍 <strong>Location:</strong>
+        ${product.location}<br>
+
+        🏪 <strong>Source:</strong>
+        ${product.source}<br>
+
+        🕒 <strong>Last Updated:</strong>
+        ${product.updated}
+
+      </div>
+
+    </div>
+
+  `;
+}
+
+function goBack() {
+
+  document.getElementById("detailsPage").style.display = "none";
+
+  document.getElementById("searchPage").style.display = "block";
 }
 
 showProducts(products);
