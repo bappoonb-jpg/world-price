@@ -7,127 +7,240 @@
 <title>World Price</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{
+  box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f7fb;
-  color: #111827;
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#111827;
 }
 
-header {
-  background: #111827;
-  color: white;
-  text-align: center;
-  padding: 28px 15px;
+header{
+  background:#111827;
+  color:white;
+  padding:28px 18px 32px;
+  text-align:center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 32px;
+.logo{
+  font-size:32px;
+  font-weight:bold;
 }
 
-header p {
-  margin: 8px 0 0;
-  color: #d1d5db;
+.subtitle{
+  margin-top:8px;
+  color:#cbd5e1;
+  font-size:15px;
 }
 
-main {
-  max-width: 700px;
-  margin: auto;
-  padding: 20px;
+main{
+  max-width:700px;
+  margin:auto;
+  padding:18px;
 }
 
-.search-box {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
+.search-area{
+  margin-top:-5px;
 }
 
-input {
-  flex: 1;
-  padding: 15px;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  font-size: 16px;
+.search-box{
+  display:flex;
+  gap:8px;
+  background:white;
+  padding:7px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-button {
-  padding: 15px 18px;
-  border: 0;
-  border-radius: 10px;
-  background: #2563eb;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
+.search-box input{
+  flex:1;
+  min-width:0;
+  border:0;
+  outline:none;
+  padding:14px 12px;
+  font-size:16px;
+  background:white;
 }
 
-.card {
-  background: white;
-  padding: 18px;
-  margin-bottom: 15px;
-  border-radius: 14px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
+.search-box button{
+  border:0;
+  border-radius:11px;
+  padding:0 18px;
+  background:#2563eb;
+  color:white;
+  font-weight:bold;
+  font-size:15px;
 }
 
-.card:active {
-  transform: scale(0.98);
+.location-box{
+  margin:15px 0;
+  padding:13px 15px;
+  background:white;
+  border-radius:13px;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);
+  color:#374151;
 }
 
-.card h2 {
-  margin: 0 0 10px;
+.section-title{
+  margin:20px 0 12px;
+  font-size:19px;
+  font-weight:bold;
 }
 
-.price {
-  font-size: 24px;
-  font-weight: bold;
-  color: #16a34a;
+.card{
+  background:white;
+  border-radius:17px;
+  padding:18px;
+  margin-bottom:14px;
+  box-shadow:0 4px 16px rgba(0,0,0,.07);
+  cursor:pointer;
+  transition:.15s;
 }
 
-.info {
-  margin-top: 10px;
-  color: #6b7280;
-  line-height: 1.7;
+.card:active{
+  transform:scale(.98);
 }
 
-.not-found {
-  text-align: center;
-  padding: 30px;
-  color: #6b7280;
+.card-top{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
 }
 
-.details {
-  background: white;
-  padding: 22px;
-  border-radius: 14px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+.product-name{
+  font-size:19px;
+  font-weight:bold;
 }
 
-.details h2 {
-  margin-top: 0;
-  font-size: 28px;
+.price{
+  margin-top:8px;
+  font-size:25px;
+  font-weight:bold;
+  color:#16a34a;
 }
 
-.detail-price {
-  font-size: 30px;
-  font-weight: bold;
-  color: #16a34a;
-  margin: 15px 0;
+.status{
+  padding:6px 9px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:bold;
+  height:max-content;
 }
 
-.detail-info {
-  line-height: 2;
-  color: #374151;
+.available{
+  background:#dcfce7;
+  color:#15803d;
 }
 
-.back-button {
-  margin-bottom: 15px;
-  background: #111827;
+.unavailable{
+  background:#fee2e2;
+  color:#b91c1c;
+}
+
+.info{
+  margin-top:13px;
+  color:#6b7280;
+  line-height:1.8;
+  font-size:14px;
+}
+
+.distance{
+  color:#2563eb;
+  font-weight:bold;
+}
+
+.updated{
+  margin-top:8px;
+  font-size:12px;
+  color:#9ca3af;
+}
+
+.not-found{
+  background:white;
+  border-radius:16px;
+  padding:30px 18px;
+  text-align:center;
+  color:#6b7280;
+}
+
+.details-page{
+  display:none;
+}
+
+.back-button{
+  border:0;
+  background:#111827;
+  color:white;
+  padding:12px 16px;
+  border-radius:11px;
+  font-size:15px;
+  font-weight:bold;
+  margin-bottom:14px;
+}
+
+.details-card{
+  background:white;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.details-card h2{
+  margin:0;
+  font-size:28px;
+}
+
+.details-price{
+  font-size:32px;
+  font-weight:bold;
+  color:#16a34a;
+  margin:15px 0;
+}
+
+.detail-row{
+  padding:14px 0;
+  border-bottom:1px solid #e5e7eb;
+  line-height:1.5;
+}
+
+.detail-row:last-child{
+  border-bottom:0;
+}
+
+.label{
+  color:#6b7280;
+  font-size:13px;
+}
+
+.value{
+  margin-top:3px;
+  font-weight:bold;
+}
+
+.badge{
+  display:inline-block;
+  margin-top:15px;
+  padding:8px 12px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+@media(max-width:480px){
+  header{
+    padding-top:24px;
+  }
+
+  .logo{
+    font-size:28px;
+  }
+
+  main{
+    padding:15px;
+  }
 }
 </style>
 </head>
@@ -135,165 +248,475 @@ button {
 <body>
 
 <header>
-  <h1>🌍 World Price</h1>
-  <p>Find and compare prices around the world</p>
+  <div class="logo">🌍 World Price</div>
+  <div class="subtitle">
+    Search products, food, services and prices
+  </div>
 </header>
 
 <main>
 
-  <div id="searchPage">
+  <!-- SEARCH PAGE -->
+  <section id="searchPage">
 
-    <div class="search-box">
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="Search a product..."
-      >
+    <div class="search-area">
 
-      <button onclick="searchProducts()">
-        Search
-      </button>
+      <div class="search-box">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search anything..."
+          onkeydown="handleEnter(event)"
+        >
+
+        <button onclick="searchProducts()">
+          Search
+        </button>
+      </div>
+
+    </div>
+
+    <div class="location-box">
+      📍 <strong>Your Location</strong><br>
+      <span id="locationText">
+        Location not selected
+      </span>
+    </div>
+
+    <div class="section-title">
+      Nearby & Popular
     </div>
 
     <div id="results"></div>
 
-  </div>
+  </section>
 
-  <div id="detailsPage" style="display: none;"></div>
+
+  <!-- DETAILS PAGE -->
+  <section id="detailsPage" class="details-page"></section>
 
 </main>
+
 
 <script>
 
 const products = [
 
   {
-    name: "iPhone 15",
-    price: "₹59,999",
-    location: "India",
-    source: "Sample Store",
-    updated: "Today"
+    name:"iPhone 15",
+    price:"₹59,999",
+    location:"Thiruvananthapuram",
+    distance:"1.8 km",
+    source:"Sample Mobile Store",
+    available:true,
+    updated:"Today"
   },
 
   {
-    name: "Samsung Galaxy S24",
-    price: "₹64,999",
-    location: "India",
-    source: "Sample Store",
-    updated: "Today"
+    name:"Samsung Galaxy S24",
+    price:"₹64,999",
+    location:"Kazhakuttam",
+    distance:"3.2 km",
+    source:"Sample Mobile Store",
+    available:true,
+    updated:"Today"
   },
 
   {
-    name: "Yamaha R15",
-    price: "₹1,85,000",
-    location: "India",
-    source: "Sample Dealer",
-    updated: "Today"
+    name:"Chicken Biryani",
+    price:"₹180 / plate",
+    location:"Kazhakuttam",
+    distance:"1.2 km",
+    source:"Sample Restaurant",
+    available:true,
+    updated:"Today"
+  },
+
+  {
+    name:"Yamaha R15",
+    price:"₹1,85,000",
+    location:"Thiruvananthapuram",
+    distance:"5.6 km",
+    source:"Sample Yamaha Dealer",
+    available:true,
+    updated:"Today"
+  },
+
+  {
+    name:"Electrical Wire",
+    price:"₹850",
+    location:"Kazhakuttam",
+    distance:"2.4 km",
+    source:"Sample Electrical Store",
+    available:true,
+    updated:"Today"
+  },
+
+  {
+    name:"Auto Rickshaw",
+    price:"₹80 approx.",
+    location:"Nearby",
+    distance:"0.7 km",
+    source:"Sample Transport Service",
+    available:true,
+    updated:"Just now"
   }
 
 ];
 
-function showProducts(list) {
 
-  const results = document.getElementById("results");
+function showProducts(list){
 
-  if (list.length === 0) {
+  const results=document.getElementById("results");
 
-    results.innerHTML =
-      '<div class="not-found">No product found.</div>';
+  if(list.length===0){
+
+    results.innerHTML=`
+      <div class="not-found">
+        <div style="font-size:35px;">🔎</div>
+
+        <h3>No result found</h3>
+
+        <p>
+          We couldn't find this item in the current data.
+        </p>
+
+        <p>
+          Live data sources will be connected later.
+        </p>
+      </div>
+    `;
 
     return;
   }
 
-  results.innerHTML = list.map((product) => {
 
-    const index = products.indexOf(product);
+  results.innerHTML=list.map(product=>{
+
+    const index=products.indexOf(product);
 
     return `
-      <div class="card" onclick="showDetails(${index})">
 
-        <h2>${product.name}</h2>
+      <div class="card"
+           onclick="showDetails(${index})">
 
-        <div class="price">
-          ${product.price}
+        <div class="card-top">
+
+          <div>
+
+            <div class="product-name">
+              ${product.name}
+            </div>
+
+            <div class="price">
+              ${product.price}
+            </div>
+
+          </div>
+
+          <div class="status ${
+            product.available
+            ? "available"
+            : "unavailable"
+          }">
+
+            ${
+              product.available
+              ? "✓ Available"
+              : "✕ Not Available"
+            }
+
+          </div>
+
         </div>
 
+
         <div class="info">
-          📍 Location: ${product.location}<br>
-          🏪 Source: ${product.source}<br>
+
+          📍 ${product.location}<br>
+
+          📏 <span class="distance">
+            ${product.distance}
+          </span><br>
+
+          🏪 ${product.source}
+
+        </div>
+
+
+        <div class="updated">
           🕒 Updated: ${product.updated}
         </div>
 
       </div>
+
     `;
 
   }).join("");
-
 }
 
-function searchProducts() {
 
-  const query = document
+function searchProducts(){
+
+  const query=document
     .getElementById("searchInput")
     .value
     .toLowerCase()
     .trim();
 
-  const filtered = products.filter((product) =>
-    product.name.toLowerCase().includes(query)
-  );
+
+  if(query===""){
+
+    showProducts(products);
+
+    return;
+  }
+
+
+  const filtered=products.filter(product=>{
+
+    return product.name
+      .toLowerCase()
+      .includes(query);
+
+  });
+
 
   showProducts(filtered);
 }
 
-function showDetails(index) {
 
-  const product = products[index];
+function handleEnter(event){
 
-  document.getElementById("searchPage").style.display = "none";
+  if(event.key==="Enter"){
 
-  document.getElementById("detailsPage").style.display = "block";
+    searchProducts();
 
-  document.getElementById("detailsPage").innerHTML = `
+  }
 
-    <button class="back-button" onclick="goBack()">
+}
+
+
+function showDetails(index){
+
+  const product=products[index];
+
+  document
+    .getElementById("searchPage")
+    .style.display="none";
+
+
+  const details=document
+    .getElementById("detailsPage");
+
+
+  details.style.display="block";
+
+
+  details.innerHTML=`
+
+    <button
+      class="back-button"
+      onclick="goBack()">
+
       ⬅️ Back
+
     </button>
 
-    <div class="details">
 
-      <h2>${product.name}</h2>
+    <div class="details-card">
 
-      <div class="detail-price">
+      <h2>
+        ${product.name}
+      </h2>
+
+
+      <div class="details-price">
         ${product.price}
       </div>
 
-      <div class="detail-info">
 
-        📍 <strong>Location:</strong>
-        ${product.location}<br>
+      <div class="badge ${
+        product.available
+        ? "available"
+        : "unavailable"
+      }">
 
-        🏪 <strong>Source:</strong>
-        ${product.source}<br>
+        ${
+          product.available
+          ? "✓ Currently Available"
+          : "✕ Currently Not Available"
+        }
 
-        🕒 <strong>Last Updated:</strong>
-        ${product.updated}
+      </div>
+
+
+      <div class="detail-row">
+
+        <div class="label">
+          📍 Location
+        </div>
+
+        <div class="value">
+          ${product.location}
+        </div>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <div class="label">
+          📏 Distance
+        </div>
+
+        <div class="value">
+          ${product.distance}
+        </div>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <div class="label">
+          🏪 Available At
+        </div>
+
+        <div class="value">
+          ${product.source}
+        </div>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <div class="label">
+          🕒 Latest Update
+        </div>
+
+        <div class="value">
+          ${product.updated}
+        </div>
 
       </div>
 
     </div>
 
   `;
+
+
+  /*
+    Add browser history state.
+
+    This makes the Android phone Back button
+    return to the World Price search page
+    instead of immediately leaving the page.
+  */
+
+  history.pushState(
+    {page:"details"},
+    "",
+    "#details"
+  );
+
 }
 
-function goBack() {
 
-  document.getElementById("detailsPage").style.display = "none";
+function goBack(){
 
-  document.getElementById("searchPage").style.display = "block";
+  const details=document
+    .getElementById("detailsPage");
+
+  details.style.display="none";
+
+
+  document
+    .getElementById("searchPage")
+    .style.display="block";
+
+
+  if(location.hash==="#details"){
+
+    history.back();
+
+  }
+
 }
+
+
+/*
+  Android / browser Back button
+
+  If the user is on Product Details,
+  go back to the World Price search page.
+*/
+
+window.addEventListener("popstate",function(){
+
+  const details=document
+    .getElementById("detailsPage");
+
+
+  if(details.style.display==="block"){
+
+    details.style.display="none";
+
+
+    document
+      .getElementById("searchPage")
+      .style.display="block";
+
+  }
+
+});
+
+
+/*
+  Demo location.
+
+  Later this can be replaced with
+  real GPS / Maps API location.
+*/
+
+function getLocation(){
+
+  if(!navigator.geolocation){
+
+    document.getElementById("locationText")
+      .textContent="Location unavailable";
+
+    return;
+  }
+
+
+  navigator.geolocation.getCurrentPosition(
+
+    function(position){
+
+      document.getElementById("locationText")
+        .textContent=
+        "Location detected";
+
+    },
+
+    function(){
+
+      document.getElementById("locationText")
+        .textContent=
+        "Location permission not allowed";
+
+    }
+
+  );
+
+}
+
 
 showProducts(products);
+
+getLocation();
 
 </script>
 
