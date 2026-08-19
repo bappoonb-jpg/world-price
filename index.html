@@ -9,237 +9,337 @@
 <style>
 *{
   box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f7fb;
+  font-family:Arial, sans-serif;
+  background:#f5f7fb;
   color:#111827;
 }
 
-header{
-  background:#111827;
-  color:white;
-  padding:28px 18px 32px;
-  text-align:center;
+.app{
+  max-width:480px;
+  margin:auto;
+  min-height:100vh;
+  background:#ffffff;
+  padding-bottom:80px;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 18px 12px;
 }
 
 .logo{
-  font-size:32px;
-  font-weight:bold;
+  font-size:24px;
+  font-weight:800;
+  color:#1769ff;
 }
 
-.subtitle{
-  margin-top:8px;
-  color:#cbd5e1;
-  font-size:15px;
+.logo span{
+  color:#111827;
 }
 
-main{
-  max-width:700px;
-  margin:auto;
-  padding:18px;
+.notification{
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:50%;
+  background:#f1f5f9;
+  font-size:20px;
 }
 
-.search-area{
-  margin-top:-5px;
+/* INTRO */
+.intro{
+  padding:8px 18px 18px;
 }
 
+.intro h1{
+  font-size:27px;
+  line-height:1.2;
+  margin-bottom:7px;
+}
+
+.intro p{
+  color:#6b7280;
+  font-size:14px;
+}
+
+/* SEARCH */
 .search-box{
+  margin:0 18px 18px;
   display:flex;
-  gap:8px;
-  background:white;
-  padding:7px;
-  border-radius:15px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  align-items:center;
+  background:#f8fafc;
+  border:1px solid #dbe2ea;
+  border-radius:18px;
+  height:58px;
+  padding:0 8px 0 16px;
+}
+
+.search-icon{
+  font-size:21px;
+  margin-right:9px;
 }
 
 .search-box input{
   flex:1;
-  min-width:0;
-  border:0;
+  border:none;
   outline:none;
-  padding:14px 12px;
-  font-size:16px;
-  background:white;
-}
-
-.search-box button{
-  border:0;
-  border-radius:11px;
-  padding:0 18px;
-  background:#2563eb;
-  color:white;
-  font-weight:bold;
+  background:transparent;
   font-size:15px;
+  min-width:0;
 }
 
-.location-box{
-  margin:15px 0;
-  padding:13px 15px;
-  background:white;
-  border-radius:13px;
-  box-shadow:0 3px 12px rgba(0,0,0,.06);
-  color:#374151;
-}
-
-.section-title{
-  margin:20px 0 12px;
-  font-size:19px;
-  font-weight:bold;
-}
-
-.card{
-  background:white;
-  border-radius:17px;
-  padding:18px;
-  margin-bottom:14px;
-  box-shadow:0 4px 16px rgba(0,0,0,.07);
+.voice-btn{
+  width:44px;
+  height:44px;
+  border:none;
+  border-radius:14px;
+  background:#1769ff;
+  color:white;
+  font-size:20px;
   cursor:pointer;
-  transition:.15s;
 }
 
-.card:active{
-  transform:scale(.98);
+.voice-btn:active{
+  transform:scale(.95);
 }
 
-.card-top{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-}
-
-.product-name{
-  font-size:19px;
-  font-weight:bold;
-}
-
-.price{
-  margin-top:8px;
-  font-size:25px;
-  font-weight:bold;
-  color:#16a34a;
-}
-
-.status{
-  padding:6px 9px;
-  border-radius:8px;
-  font-size:12px;
-  font-weight:bold;
-  height:max-content;
-}
-
-.available{
-  background:#dcfce7;
-  color:#15803d;
-}
-
-.unavailable{
-  background:#fee2e2;
-  color:#b91c1c;
-}
-
-.info{
-  margin-top:13px;
-  color:#6b7280;
-  line-height:1.8;
-  font-size:14px;
-}
-
-.distance{
-  color:#2563eb;
-  font-weight:bold;
-}
-
-.updated{
-  margin-top:8px;
-  font-size:12px;
-  color:#9ca3af;
-}
-
-.not-found{
-  background:white;
+/* LOCATION */
+.location{
+  margin:0 18px 22px;
+  padding:14px;
   border-radius:16px;
-  padding:30px 18px;
-  text-align:center;
-  color:#6b7280;
+  background:#f8fafc;
+  display:flex;
+  align-items:center;
+  gap:11px;
 }
 
-.details-page{
+.location-icon{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:#e8f0ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+.location-info{
+  flex:1;
+}
+
+.location-title{
+  font-size:12px;
+  color:#6b7280;
+  margin-bottom:3px;
+}
+
+.location-name{
+  font-size:14px;
+  font-weight:600;
+}
+
+.change-btn{
+  border:none;
+  background:none;
+  color:#1769ff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* SECTION */
+.section{
+  padding:0 18px;
+}
+
+.section-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:13px;
+}
+
+.section-header h2{
+  font-size:19px;
+}
+
+.section-header button{
+  border:none;
+  background:none;
+  color:#1769ff;
+  font-weight:600;
+}
+
+/* CATEGORIES */
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-bottom:26px;
+}
+
+.category{
+  border:none;
+  background:#f8fafc;
+  border-radius:16px;
+  padding:14px 5px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.category:active{
+  transform:scale(.95);
+}
+
+.category-icon{
+  width:45px;
+  height:45px;
+  margin:0 auto 8px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
+}
+
+.category:nth-child(1) .category-icon{
+  background:#e8f1ff;
+}
+
+.category:nth-child(2) .category-icon{
+  background:#fff0e8;
+}
+
+.category:nth-child(3) .category-icon{
+  background:#e9f8ed;
+}
+
+.category:nth-child(4) .category-icon{
+  background:#f0eaff;
+}
+
+.category:nth-child(5) .category-icon{
+  background:#fff5dc;
+}
+
+.category:nth-child(6) .category-icon{
+  background:#e8f7ff;
+}
+
+.category:nth-child(7) .category-icon{
+  background:#e9f8ee;
+}
+
+.category:nth-child(8) .category-icon{
+  background:#f0edff;
+}
+
+.category-name{
+  font-size:12px;
+  font-weight:700;
+}
+
+/* POPULAR SEARCH */
+.popular{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding-bottom:5px;
+  scrollbar-width:none;
+}
+
+.popular::-webkit-scrollbar{
   display:none;
 }
 
-.back-button{
-  border:0;
-  background:#111827;
-  color:white;
-  padding:12px 16px;
-  border-radius:11px;
-  font-size:15px;
-  font-weight:bold;
-  margin-bottom:14px;
-}
-
-.details-card{
+.popular button{
+  white-space:nowrap;
+  border:1px solid #e1e7ef;
   background:white;
   border-radius:20px;
-  padding:22px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  padding:9px 14px;
+  font-size:13px;
+  cursor:pointer;
 }
 
-.details-card h2{
-  margin:0;
-  font-size:28px;
+/* BOTTOM NAVIGATION */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(480px,100%);
+  height:70px;
+  background:white;
+  border-top:1px solid #e5e7eb;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  z-index:100;
 }
 
-.details-price{
-  font-size:32px;
-  font-weight:bold;
-  color:#16a34a;
-  margin:15px 0;
-}
-
-.detail-row{
-  padding:14px 0;
-  border-bottom:1px solid #e5e7eb;
-  line-height:1.5;
-}
-
-.detail-row:last-child{
-  border-bottom:0;
-}
-
-.label{
+.nav-btn{
+  border:none;
+  background:white;
   color:#6b7280;
+  font-size:11px;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+}
+
+.nav-btn span{
+  font-size:21px;
+}
+
+.nav-btn.active{
+  color:#1769ff;
+  font-weight:700;
+}
+
+/* MESSAGE */
+.message{
+  position:fixed;
+  left:50%;
+  bottom:82px;
+  transform:translateX(-50%);
+  width:calc(100% - 40px);
+  max-width:420px;
+  padding:13px 16px;
+  background:#111827;
+  color:white;
+  border-radius:12px;
+  text-align:center;
   font-size:13px;
+  display:none;
+  z-index:200;
 }
 
-.value{
-  margin-top:3px;
-  font-weight:bold;
-}
-
-.badge{
-  display:inline-block;
-  margin-top:15px;
-  padding:8px 12px;
-  border-radius:10px;
-  font-size:13px;
-  font-weight:bold;
-}
-
-@media(max-width:480px){
-  header{
-    padding-top:24px;
+/* DESKTOP */
+@media(min-width:700px){
+  body{
+    padding:25px 0;
   }
 
-  .logo{
-    font-size:28px;
+  .app{
+    border-radius:24px;
+    box-shadow:0 10px 40px rgba(0,0,0,.08);
+    overflow:hidden;
   }
 
-  main{
-    padding:15px;
+  .bottom-nav{
+    border-radius:0 0 24px 24px;
   }
 }
 </style>
@@ -247,476 +347,308 @@ main{
 
 <body>
 
-<header>
-  <div class="logo">🌍 World Price</div>
-  <div class="subtitle">
-    Search products, food, services and prices
+<div class="app">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">WORLD <span>PRICE</span></div>
+    <button class="notification" onclick="showMessage('Notifications will be added later.')">
+      🔔
+    </button>
+  </header>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <h1>Find the price.<br>Anywhere.</h1>
+    <p>Search products, food, vehicles, hotels and more.</p>
+  </section>
+
+  <!-- SEARCH -->
+  <div class="search-box">
+    <div class="search-icon">🔍</div>
+
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search anything..."
+      onkeydown="handleSearch(event)"
+    >
+
+    <button
+      class="voice-btn"
+      onclick="startVoiceSearch()"
+      title="Voice Search"
+    >
+      🎙️
+    </button>
   </div>
-</header>
 
-<main>
+  <!-- LOCATION -->
+  <div class="location">
 
-  <!-- SEARCH PAGE -->
-  <section id="searchPage">
+    <div class="location-icon">📍</div>
 
-    <div class="search-area">
-
-      <div class="search-box">
-        <input
-          id="searchInput"
-          type="text"
-          placeholder="Search anything..."
-          onkeydown="handleEnter(event)"
-        >
-
-        <button onclick="searchProducts()">
-          Search
-        </button>
-      </div>
-
-    </div>
-
-    <div class="location-box">
-      📍 <strong>Your Location</strong><br>
-      <span id="locationText">
+    <div class="location-info">
+      <div class="location-title">Your Location</div>
+      <div class="location-name" id="locationName">
         Location not selected
-      </span>
+      </div>
     </div>
 
-    <div class="section-title">
-      Nearby & Popular
+    <button class="change-btn" onclick="getLocation()">
+      Change
+    </button>
+
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section">
+
+    <div class="section-header">
+      <h2>Explore</h2>
     </div>
 
-    <div id="results"></div>
+    <div class="categories">
+
+      <button class="category" onclick="openCategory('Mobile')">
+        <div class="category-icon">📱</div>
+        <div class="category-name">Mobile</div>
+      </button>
+
+      <button class="category" onclick="openCategory('Food')">
+        <div class="category-icon">🍔</div>
+        <div class="category-name">Food</div>
+      </button>
+
+      <button class="category" onclick="openCategory('Vehicles')">
+        <div class="category-icon">🚗</div>
+        <div class="category-name">Vehicles</div>
+      </button>
+
+      <button class="category" onclick="openCategory('Hotels')">
+        <div class="category-icon">🏨</div>
+        <div class="category-name">Hotels</div>
+      </button>
+
+      <button class="category" onclick="openCategory('Property')">
+        <div class="category-icon">🏠</div>
+        <div class="category-name">Property</div>
+      </button>
+
+      <button class="category" onclick="openCategory('Electronics')">
+        <div class="category-icon">💻</div>
+        <div class="category-name">Electronics</div>
+      </button>
+
+      <button class="category" onclick="openCategory('Grocery')">
+        <div class="category-icon">🛒</div>
+        <div class="category-name">Grocery</div>
+      </button>
+
+      <button class="category" onclick="openCategory('Services')">
+        <div class="category-icon">🧰</div>
+        <div class="category-name">Services</div>
+      </button>
+
+    </div>
 
   </section>
 
+  <!-- POPULAR SEARCHES -->
+  <section class="section">
 
-  <!-- DETAILS PAGE -->
-  <section id="detailsPage" class="details-page"></section>
+    <div class="section-header">
+      <h2>Popular Searches</h2>
+    </div>
 
-</main>
+    <div class="popular">
+
+      <button onclick="quickSearch('iPhone')">
+        iPhone
+      </button>
+
+      <button onclick="quickSearch('Biryani')">
+        Biryani
+      </button>
+
+      <button onclick="quickSearch('Toyota Car')">
+        Toyota Car
+      </button>
+
+      <button onclick="quickSearch('Hotel')">
+        Hotel
+      </button>
+
+      <button onclick="quickSearch('Laptop')">
+        Laptop
+      </button>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- MESSAGE -->
+<div class="message" id="message"></div>
+
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav">
+
+  <button class="nav-btn active" onclick="showMessage('You are already on Home.')">
+    <span>⌂</span>
+    Home
+  </button>
+
+  <button class="nav-btn" onclick="showMessage('Search page will be added later.')">
+    <span>⌕</span>
+    Search
+  </button>
+
+  <button class="nav-btn" onclick="showMessage('Saved items will be added later.')">
+    <span>♡</span>
+    Saved
+  </button>
+
+  <button class="nav-btn" onclick="getLocation()">
+    <span>⌖</span>
+    Nearby
+  </button>
+
+  <button class="nav-btn" onclick="showMessage('More options will be added later.')">
+    <span>☰</span>
+    More
+  </button>
+
+</nav>
 
 
 <script>
 
-const products = [
+/* MESSAGE */
+function showMessage(text){
 
-  {
-    name:"iPhone 15",
-    price:"₹59,999",
-    location:"Thiruvananthapuram",
-    distance:"1.8 km",
-    source:"Sample Mobile Store",
-    available:true,
-    updated:"Today"
-  },
+  const message = document.getElementById("message");
 
-  {
-    name:"Samsung Galaxy S24",
-    price:"₹64,999",
-    location:"Kazhakuttam",
-    distance:"3.2 km",
-    source:"Sample Mobile Store",
-    available:true,
-    updated:"Today"
-  },
+  message.innerText = text;
+  message.style.display = "block";
 
-  {
-    name:"Chicken Biryani",
-    price:"₹180 / plate",
-    location:"Kazhakuttam",
-    distance:"1.2 km",
-    source:"Sample Restaurant",
-    available:true,
-    updated:"Today"
-  },
+  setTimeout(function(){
+    message.style.display = "none";
+  },2500);
+}
 
-  {
-    name:"Yamaha R15",
-    price:"₹1,85,000",
-    location:"Thiruvananthapuram",
-    distance:"5.6 km",
-    source:"Sample Yamaha Dealer",
-    available:true,
-    updated:"Today"
-  },
 
-  {
-    name:"Electrical Wire",
-    price:"₹850",
-    location:"Kazhakuttam",
-    distance:"2.4 km",
-    source:"Sample Electrical Store",
-    available:true,
-    updated:"Today"
-  },
+/* SEARCH */
+function handleSearch(event){
 
-  {
-    name:"Auto Rickshaw",
-    price:"₹80 approx.",
-    location:"Nearby",
-    distance:"0.7 km",
-    source:"Sample Transport Service",
-    available:true,
-    updated:"Just now"
+  if(event.key === "Enter"){
+
+    const value = document.getElementById("searchInput").value.trim();
+
+    if(value === ""){
+      showMessage("Please enter something to search.");
+      return;
+    }
+
+    showMessage("Searching for: " + value);
   }
+}
 
-];
+
+/* QUICK SEARCH */
+function quickSearch(value){
+
+  document.getElementById("searchInput").value = value;
+
+  document.getElementById("searchInput").focus();
+}
 
 
-function showProducts(list){
+/* CATEGORY */
+function openCategory(category){
 
-  const results=document.getElementById("results");
+  showMessage(category + " section will be built next.");
+}
 
-  if(list.length===0){
 
-    results.innerHTML=`
-      <div class="not-found">
-        <div style="font-size:35px;">🔎</div>
+/* VOICE SEARCH */
+function startVoiceSearch(){
 
-        <h3>No result found</h3>
+  const SpeechRecognition =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
 
-        <p>
-          We couldn't find this item in the current data.
-        </p>
+  if(!SpeechRecognition){
 
-        <p>
-          Live data sources will be connected later.
-        </p>
-      </div>
-    `;
-
+    showMessage("Voice search is not supported in this browser.");
     return;
   }
 
+  const recognition = new SpeechRecognition();
 
-  results.innerHTML=list.map(product=>{
+  recognition.lang = "en-IN";
+  recognition.interimResults = false;
 
-    const index=products.indexOf(product);
+  showMessage("Listening... Speak now.");
 
-    return `
+  recognition.start();
 
-      <div class="card"
-           onclick="showDetails(${index})">
+  recognition.onresult = function(event){
 
-        <div class="card-top">
+    const text = event.results[0][0].transcript;
 
-          <div>
+    document.getElementById("searchInput").value = text;
 
-            <div class="product-name">
-              ${product.name}
-            </div>
+    showMessage("Voice search: " + text);
+  };
 
-            <div class="price">
-              ${product.price}
-            </div>
+  recognition.onerror = function(){
 
-          </div>
-
-          <div class="status ${
-            product.available
-            ? "available"
-            : "unavailable"
-          }">
-
-            ${
-              product.available
-              ? "✓ Available"
-              : "✕ Not Available"
-            }
-
-          </div>
-
-        </div>
-
-
-        <div class="info">
-
-          📍 ${product.location}<br>
-
-          📏 <span class="distance">
-            ${product.distance}
-          </span><br>
-
-          🏪 ${product.source}
-
-        </div>
-
-
-        <div class="updated">
-          🕒 Updated: ${product.updated}
-        </div>
-
-      </div>
-
-    `;
-
-  }).join("");
+    showMessage("Voice search could not be completed.");
+  };
 }
 
 
-function searchProducts(){
-
-  const query=document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase()
-    .trim();
-
-
-  if(query===""){
-
-    showProducts(products);
-
-    return;
-  }
-
-
-  const filtered=products.filter(product=>{
-
-    return product.name
-      .toLowerCase()
-      .includes(query);
-
-  });
-
-
-  showProducts(filtered);
-}
-
-
-function handleEnter(event){
-
-  if(event.key==="Enter"){
-
-    searchProducts();
-
-  }
-
-}
-
-
-function showDetails(index){
-
-  const product=products[index];
-
-  document
-    .getElementById("searchPage")
-    .style.display="none";
-
-
-  const details=document
-    .getElementById("detailsPage");
-
-
-  details.style.display="block";
-
-
-  details.innerHTML=`
-
-    <button
-      class="back-button"
-      onclick="goBack()">
-
-      ⬅️ Back
-
-    </button>
-
-
-    <div class="details-card">
-
-      <h2>
-        ${product.name}
-      </h2>
-
-
-      <div class="details-price">
-        ${product.price}
-      </div>
-
-
-      <div class="badge ${
-        product.available
-        ? "available"
-        : "unavailable"
-      }">
-
-        ${
-          product.available
-          ? "✓ Currently Available"
-          : "✕ Currently Not Available"
-        }
-
-      </div>
-
-
-      <div class="detail-row">
-
-        <div class="label">
-          📍 Location
-        </div>
-
-        <div class="value">
-          ${product.location}
-        </div>
-
-      </div>
-
-
-      <div class="detail-row">
-
-        <div class="label">
-          📏 Distance
-        </div>
-
-        <div class="value">
-          ${product.distance}
-        </div>
-
-      </div>
-
-
-      <div class="detail-row">
-
-        <div class="label">
-          🏪 Available At
-        </div>
-
-        <div class="value">
-          ${product.source}
-        </div>
-
-      </div>
-
-
-      <div class="detail-row">
-
-        <div class="label">
-          🕒 Latest Update
-        </div>
-
-        <div class="value">
-          ${product.updated}
-        </div>
-
-      </div>
-
-    </div>
-
-  `;
-
-
-  /*
-    Add browser history state.
-
-    This makes the Android phone Back button
-    return to the World Price search page
-    instead of immediately leaving the page.
-  */
-
-  history.pushState(
-    {page:"details"},
-    "",
-    "#details"
-  );
-
-}
-
-
-function goBack(){
-
-  const details=document
-    .getElementById("detailsPage");
-
-  details.style.display="none";
-
-
-  document
-    .getElementById("searchPage")
-    .style.display="block";
-
-
-  if(location.hash==="#details"){
-
-    history.back();
-
-  }
-
-}
-
-
-/*
-  Android / browser Back button
-
-  If the user is on Product Details,
-  go back to the World Price search page.
-*/
-
-window.addEventListener("popstate",function(){
-
-  const details=document
-    .getElementById("detailsPage");
-
-
-  if(details.style.display==="block"){
-
-    details.style.display="none";
-
-
-    document
-      .getElementById("searchPage")
-      .style.display="block";
-
-  }
-
-});
-
-
-/*
-  Demo location.
-
-  Later this can be replaced with
-  real GPS / Maps API location.
-*/
-
+/* LOCATION */
 function getLocation(){
 
   if(!navigator.geolocation){
 
-    document.getElementById("locationText")
-      .textContent="Location unavailable";
-
+    showMessage("Location is not supported by this browser.");
     return;
   }
 
+  showMessage("Getting your location...");
 
   navigator.geolocation.getCurrentPosition(
 
     function(position){
 
-      document.getElementById("locationText")
-        .textContent=
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+
+      document.getElementById("locationName").innerText =
         "Location detected";
 
+      showMessage(
+        "Location detected successfully."
+      );
+
+      console.log("Latitude:", lat);
+      console.log("Longitude:", lon);
     },
 
     function(){
 
-      document.getElementById("locationText")
-        .textContent=
-        "Location permission not allowed";
-
+      showMessage(
+        "Location permission was not allowed."
+      );
     }
-
   );
-
 }
-
-
-showProducts(products);
-
-getLocation();
 
 </script>
 
